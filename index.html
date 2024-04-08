@@ -1,297 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<style>
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	
-	color: #f2f5f7;
-	font-family: sans-serif;
-	letter-spacing: 1px;
-	font-weight: 300;
-  }
-  
-  body {
-	height: 100vh;
-	place-items: center;
-	overflow: hidden;
-	
-  }
-  
-  main {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  }
-  
-  .item {
-	width: 200px;
-	height: 300px;
-	list-style-type: none;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 1;
-	background-position: center;
-	background-size: cover;
-	border-radius: 20px;
-	box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
-	transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
-  
-	&:nth-child(1), &:nth-child(2) {
-	  left: 0;
-	  top: 0;
-	  width: 100%;
-	  height: 100%;
-	  transform: none;
-	  border-radius: 0;
-	  box-shadow: none;
-	  opacity: 1;
-	}
-  
-	&:nth-child(3) { left: 50%; }
-	&:nth-child(4) { left: calc(50% + 220px); }
-	&:nth-child(5) { left: calc(50% + 440px); }
-	&:nth-child(6) { left: calc(50% + 660px); opacity: 0;}
-	&:nth-child(7) { left: calc(50% + 880px); opacity: 0;}
-	&:nth-child(8) { left: calc(50% + 1100px); opacity: 0;}
-  }
-  
-  .content {
-	width: min(30vw,400px);
-	position: absolute;
-	top: 50%;
-	left: 3rem;
-	transform: translateY(-50%);
-	font: 400 0.85rem helvetica,sans-serif;
-	color: white;
-	text-shadow: 0 3px 8px rgba(0,0,0,0.5);
-	display: none;
-  
-	& .title {
-	  font-family: 'arial-black';
-	  text-transform: uppercase;
-	}
-  
-	& .description {
-	  line-height: 1.7;
-	  margin: 1rem 0 1.5rem;
-	  font-size: 0.8rem;
-	}
-  
-	& button {
-	  width: fit-content;
-	  background-color: rgba(0,0,0,0.1);
-	  color: white;
-	  border: 2px solid white;
-	  border-radius: 0.25rem;
-	  padding: 0.75rem;
-	  cursor: pointer;
-	}
-  }
-  
-  .item:nth-of-type(2) .content {
-	display: block;
-	animation: show 0.75s ease-in-out 0.1s forwards;
-  }
-  
-  @keyframes show {
-	0% {
-	  filter: blur(5px);
-	  transform: translateY(calc(-50% + 75px));
-	}
-	100% {
-	  opacity: 1;
-	  filter: blur(0);
-	}
-  }
-  
-  .nav {
-	position: absolute;
-	bottom: 2rem;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 5;
-	user-select: none;
-  
-	& .btn {
-	  background-color: rgba(255,255,255,0.5);
-	  color: rgba(0,0,0,0.7);
-	  border: 2px solid rgba(0,0,0,0.6);
-	  margin: 0 0.25rem;
-	  padding: 0.75rem;
-	  border-radius: 50%;
-	  cursor: pointer;
-  
-	  &:hover {
-		background-color: rgba(255,255,255,0.3);
-	  }
-	}
-  }
-  
-  @media (width > 900px) and (width < 1200px) {
-	.content {
-	  & .title        { font-size: 1rem; }
-	  & .description  { font-size: 0.7rem; }
-	  & button        { font-size: 0.7rem; }
-	}
-	.item {
-	  width: 160px;
-	  height: 270px;
-  
-	  &:nth-child(3) { left: 50%; }
-	  &:nth-child(4) { left: calc(50% + 170px); }
-	  &:nth-child(5) { left: calc(50% + 350px); }
-	  &:nth-child(6) { left: calc(50% + 510px); }
-	  &:nth-child(7) { left: calc(50% + 680px);	}
-	  &:nth-child(8) { left: calc(50% + 850px);	}
-	}
-  }
-  
-  @media (width < 650px) {
-	.content {
-	  & .title        { font-size: 0.9rem; }
-	  & .description  { font-size: 0.65rem; }
-	  & button        { font-size: 0.7rem; }
-	}
-	.item {
-	  width: 130px;
-	  height: 220px;
-  
-	  &:nth-child(3) { left: 50%; }
-	  &:nth-child(4) { left: calc(50% + 140px); }
-	  &:nth-child(5) { left: calc(50% + 280px); }
-	  &:nth-child(6) { left: calc(50% + 420px); }
-	  &:nth-child(7) { left: calc(50% + 560px);	}
-	  &:nth-child(8) { left: calc(50% + 700px);	}
-	}
-  }	
-	</style>
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
 
+            color: #f2f5f7;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        body {
+            height: 100vh;
+            place-items: center;
+        }
+
+        main {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .item {
+            width: 200px;
+            height: 300px;
+            list-style-type: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-position: center;
+            background-size: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+            transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transform: none;
+                border-radius: 0;
+                box-shadow: none;
+                opacity: 1;
+            }
+
+            &:nth-child(3) {
+                left: 50%;
+            }
+
+            &:nth-child(4) {
+                left: calc(50% + 220px);
+            }
+
+            &:nth-child(5) {
+                left: calc(50% + 440px);
+            }
+
+            &:nth-child(6) {
+                left: calc(50% + 660px);
+                opacity: 0;
+            }
+
+            &:nth-child(7) {
+                left: calc(50% + 880px);
+                opacity: 0;
+            }
+
+            &:nth-child(8) {
+                left: calc(50% + 1100px);
+                opacity: 0;
+            }
+        }
+
+        .content {
+            width: min(30vw, 400px);
+            position: absolute;
+            top: 50%;
+            left: 3rem;
+            transform: translateY(-50%);
+            font: 400 0.85rem helvetica, sans-serif;
+            color: white;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+            display: none;
+
+            & .title {
+                font-family: 'arial-black';
+                text-transform: uppercase;
+            }
+
+            & .description {
+                line-height: 1.7;
+                margin: 1rem 0 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            & button {
+                width: fit-content;
+                background-color: rgba(0, 0, 0, 0.1);
+                color: white;
+                border: 2px solid white;
+                border-radius: 0.25rem;
+                padding: 0.75rem;
+                cursor: pointer;
+            }
+        }
+
+        .item:nth-of-type(2) .content {
+            display: block;
+            animation: show 0.75s ease-in-out 0.1s forwards;
+        }
+
+        @keyframes show {
+            0% {
+                filter: blur(5px);
+                transform: translateY(calc(-50% + 75px));
+            }
+
+            100% {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        .nav {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            user-select: none;
+
+            & .btn {
+                background-color: rgba(255, 255, 255, 0.5);
+                color: rgba(0, 0, 0, 0.7);
+                border: 2px solid rgba(0, 0, 0, 0.6);
+                margin: 0 0.25rem;
+                padding: 0.75rem;
+                border-radius: 50%;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+
+        @media (width > 900px) and (width < 1200px) {
+            .content {
+                & .title {
+                    font-size: 1rem;
+                }
+
+                & .description {
+                    font-size: 0.7rem;
+                }
+
+                & button {
+                    font-size: 0.7rem;
+                }
+            }
+
+            .item {
+                width: 160px;
+                height: 270px;
+
+                &:nth-child(3) {
+                    left: 50%;
+                }
+
+                &:nth-child(4) {
+                    left: calc(50% + 170px);
+                }
+
+                &:nth-child(5) {
+                    left: calc(50% + 350px);
+                }
+
+                &:nth-child(6) {
+                    left: calc(50% + 510px);
+                }
+
+                &:nth-child(7) {
+                    left: calc(50% + 680px);
+                }
+
+                &:nth-child(8) {
+                    left: calc(50% + 850px);
+                }
+            }
+        }
+
+        @media (width < 650px) {
+            .content {
+                & .title {
+                    font-size: 0.9rem;
+                }
+
+                & .description {
+                    font-size: 0.65rem;
+                }
+
+                & button {
+                    font-size: 0.7rem;
+                }
+            }
+
+            .item {
+                width: 130px;
+                height: 220px;
+
+                &:nth-child(3) {
+                    left: 50%;
+                }
+
+                &:nth-child(4) {
+                    left: calc(50% + 140px);
+                }
+
+                &:nth-child(5) {
+                    left: calc(50% + 280px);
+                }
+
+                &:nth-child(6) {
+                    left: calc(50% + 420px);
+                }
+
+                &:nth-child(7) {
+                    left: calc(50% + 560px);
+                }
+
+                &:nth-child(8) {
+                    left: calc(50% + 700px);
+                }
+            }
+        }
+    </style>
 </head>
+
 <body>
-	<header>
-		<nav class="navbar">
-		  <div class="container">
-			<a href="#" class="logo">Phetchabun</a>
-			<ul class="nav-links">
-				<li class="dropdown">
-					<a href="#" class="dropbtn">Destination</a>
-					<div class="dropdown-content">
-					  <a href="#">เมืองโบราณศรีเทพ</a>
-					  <a href="#">เขาค้อ</a>
-					  <a href="#">ภูทับเบิก</a>
-					  <a href="#">The piney brisro cafe</a>
-					  <a href="#">ทุ่งกังหันลม</a>
-					  <a href="#">The blue sky garden</a>
-					  <a href="#">Amazing Dinosaur</a>
-					  <a href="#">The blue sky garden</a>
+    <nav class="navbar">
+        <div class="container">
+          <a href="#" class="logo">Phetchabun</a>
+          <ul class="nav-links">
+              <li class="dropdown">
+                  <a href="#" class="dropbtn">Destination</a>
+                  <div class="dropdown-content">
+                      <a href="/Si Thep.html">อุทยานประวัติศาสตร์ศรีเทพ</a>
+                      <a href="/เขาค้อ.html">เขาค้อ</a>
+                      <a href="/ทุ่งกังหันลม.html">ทุ่งกังหันลม</a>
+                      <a href="/ภูทับเบิก.html">ภูทับเบิก</a>
+                      <a href="/The Piney Bistro Cafe.html">The Piney Bistro Cafe</a>
+                      <a href="/Amazing Dino.html">Amazing Dinosaur</a>
+                      <a href="/The pino latte.html">The pino latte</a>
 
-					</div>
-				  </li>				  
-			  <li><a href="#">Blog/News</a></li>
-			  <li><a href="#">Contact</a></li>
-			</ul>
-		  </div>
-		</nav>
-	</header>
-	  
-	<main>
-	<ul class='slider'>
-	  <li class='item' style="background-image: url('http://www.tourphetchabun.com/wp-content/uploads/2017/06/sertep-26.jpg')">
-		<div class='content'>
-		  <h2 class='title'>"เมืองโบราณศรีเทพ"</h2>
-		  <p class='description'> Lorem ipsum, dolor sit amet consectetur
-		  adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-		  praesentium nisi. Id laboriosam ipsam enim.  </p>
-		  <button>Read More</button>
-		</div>
-	  </li>
-	  <li class='item' style="background-image: url('https://www.hellorainy.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/04/6.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%84%E0%B9%89%E0%B8%AD-1.jpg')">
-		<div class='content'>
-		  <h2 class='title'>"เขาค้อ"</h2>
-		  <p class='description'> Lorem ipsum, dolor sit amet consectetur
-		  adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-		  praesentium nisi. Id laboriosam ipsam enim.  </p>
-		  <button>Read More</button>
-		</div>
-	  </li>
-	  <li class='item' style="background-image: url('http://www.talamok.com/tour/tour/fb1500/3509.jpg')">
-		<div class='content'>
-		  <h2 class='title'>"ภูทับเบิก"</h2>
-		  <p class='description'> Lorem ipsum, dolor sit amet consectetur
-		  adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-		  praesentium nisi. Id laboriosam ipsam enim.  </p>
-		  <button>Read More</button>
-		</div>
-	  </li>
-	  <li class='item' style="background-image: url('https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.18169-9/15107420_1611141282522944_6337666261843786857_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFvpMJGBmOIqm1U1DwfR4tSiQ_OWUEI97SJD85ZQQj3tE80b_BH7N5IMqT4L9XNZlBjhDwoao9xlb62--5gdUbZ&_nc_ohc=XBBgPK2RhGsAX8hpe8U&_nc_ht=scontent.fbkk5-4.fna&oh=00_AfATpR4JCKrVD2xzi1uhsOyF4W4n2KA_mr-vkfZtfSPbRw&oe=662E573B')">
-		<div class='content'>
-		  <h2 class='title'>"The piny cafe"</h2>
-		  <p class='description'>
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
-		  </p>
-		  <button>Read More</button>
-		</div>
-	  </li>	
-	  <li class='item' style="background-image: url('https://i.pinimg.com/originals/c1/7c/88/c17c88b1b1a6ce03c15b89487e590035.jpg')">
-		<div class='content'>
-		  <h2 class='title'>"ทุ่งกังหันลม"</h2>
-		  <p class='description'>
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
-		  </p>
-		  <button>Read More</button>
-		</div>
-	  </li>
 
-	  <li class='item' style="background-image: url('https://scontent.fbkk5-3.fna.fbcdn.net/v/t1.6435-9/62105026_1270357286465349_8228777556652851200_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFV4cy52pdqSc2vZpabqrW4Uec2EdnXtQFR5zYR2de1AcSuxWky7RvqrFCOSNuUifoz5hcK0wzD9uMilqSz0EoA&_nc_ohc=mzsqZaqh2f0AX8jhYxb&_nc_ht=scontent.fbkk5-3.fna&oh=00_AfDkcRE5VL_qePmLDLqWvvMlk0Mf3nfLW3HCYiaekx9vMg&oe=662E4417')">
-		<div class='content'>
-		  <h2 class='title'>"The blue sky garden"</h2>
-		  <p class='description'> Lorem ipsum, dolor sit amet consectetur
-		  adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-		  praesentium nisi. Id laboriosam ipsam enim.  </p>
-		  <button>Read More</button>
-		</div>
-	  </li>
+                  </div>
+                </li>				  
+            <li><a href="/blog.html">Blog/News</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
 
-	  
-	  <li class='item' style="background-image: url('https://v4i.rweb-images.com/www.khaokho.com/images/editor/Dinosaur001.jpg')">
-		<div class='content'>
-		  <h2 class='title'>"Amazing Dinosaur"</h2>
-		  <p class='description'> Lorem ipsum, dolor sit amet consectetur
-		  adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-		  praesentium nisi. Id laboriosam ipsam enim.  </p>
-		  <button>Read More</button>
-		</div>
-	  </li>
-	  
-	  
-	  <li class='item' style="background-image: url('https://img.wongnai.com/p/1920x0/2019/07/13/a820226ce7334ce3a3707936c43d9f5c.jpg')">
-		<div class='content'>
-		  <h2 class='title'>"The Pino Latte"</h2>
-		  <p class='description'> Lorem ipsum, dolor sit amet consectetur
-		  adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-		  praesentium nisi. Id laboriosam ipsam enim.  </p>
-		  <button>Read More</button>
-		</div>
-	  </li>
+      <main>
+        <ul class='slider'>
+          <li class='item' style="background-image: url('http://www.tourphetchabun.com/wp-content/uploads/2017/06/sertep-26.jpg')">
+            <div class='content'>
+              <h2 class='title'>"เมืองโบราณศรีเทพ"</h2>
+              <p class='description'> เมืองโบราณศรีเทพ ประดับด้วยศิลปะและวัฒนธรรมที่เป็นเอกลักษณ์
+                สร้างเสร็จสมบูรณ์ด้วยการวางแผนอย่างประณีตและช่างมีความสามารถ
+                ความงดงามและประเทศใจที่หลงใหล เรียกให้คำขาน  </p>
+              <a href='/Si Thep.html'>
+              <button>Read More</button>
+              </a>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://www.hellorainy.xn--60-qqiho9gn1etczag5gd0g7etg.com/wp-content/uploads/2020/04/6.%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%84%E0%B9%89%E0%B8%AD-1.jpg')">
+            <div class='content'>
+              <h2 class='title'>"เขาค้อ"</h2>
+              <p class='description'> เขาค้อ เส้นทางสู่ภูเขาที่เงียบสงบ ชวนให้ผู้มาเยือนได้สัมผัสกับความงดงามของธรรมชาติ
+                หน้ามองทะเลเมอร์สีน้ำเงินของฟ้าบริสุทธิ์ และวิวสายธารที่มีชีวิตชีวา  </p>
+              <a href='/เขาค้อ.html'>
+              <button>Read More</button>
+            </a>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('http://www.talamok.com/tour/tour/fb1500/3509.jpg')">
+            <div class='content'>
+              <h2 class='title'>"ภูทับเบิก"</h2>
+              <p class='description'> ภูทับเบิก ที่มีทิวทัศน์ที่งดงาม แสดงถึงอำนาจและความเคลื่อนไหวของธรรมชาติ
+                เมื่อยอดของภูเขาสัมผัสกับฟ้า สร้างภาพวิวที่ยาวไกลอันสวยงาม
+                ทุกวันนี้นับเป็นแหล่งท่องเที่ยวยอดนิยมแห่งหนึ่งในภาคเหนือของประเทศไทย  </p>
+              <a href='/ภูทับเบิก.html'>
+              <button>Read More</button>
+              </a>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://scontent.fbkk5-4.fna.fbcdn.net/v/t1.18169-9/15107420_1611141282522944_6337666261843786857_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFvpMJGBmOIqm1U1DwfR4tSiQ_OWUEI97SJD85ZQQj3tE80b_BH7N5IMqT4L9XNZlBjhDwoao9xlb62--5gdUbZ&_nc_ohc=XBBgPK2RhGsAX8hpe8U&_nc_ht=scontent.fbkk5-4.fna&oh=00_AfATpR4JCKrVD2xzi1uhsOyF4W4n2KA_mr-vkfZtfSPbRw&oe=662E573B')">
+            <div class='content'>
+              <h2 class='title'>"The Piney Bistro Cafe"</h2>
+              <p class='description'>
+                ร้าน The Piney Bistro Cafe เสนอบรรยากาศอบอุ่นในแบบของความสไตล์ชายและเหลาลาน ที่นี่คุณจะพบกับรสชาติของกาแฟและอาหารที่สดใหม่
+                มาพักผ่อนและสัมผัสกับความอบอุ่นแห่งการต้อนรับที่นี่ได้</p>              
+                <a href='/The Piney Bistro Cafe.html'>
+              <button>Read More</button>
+              </a>
+            </div>
+          </li>	
+          <li class='item' style="background-image: url('https://i.pinimg.com/originals/c1/7c/88/c17c88b1b1a6ce03c15b89487e590035.jpg')">
+            <div class='content'>
+              <h2 class='title'>"ทุ่งกังหันลม"</h2>
+              <p class='description'>
+                ทุ่งกังหันลม เป็นที่ระลึกถึงความสวยงามและความเงียบสงัดของธรรมชาติ
+                ดวงอาทิตย์ส่องแสงสดใสลงลงบนทุ่งหญ้าเขียวขจี สร้างสีสันสวยงามในแสงสว่าง
+                ที่นี่เป็นสถานที่เหมาะสำหรับการพักผ่อนและสัมผัสกับความสงบสุขในใจ</p>
+              <a href='/ทุ่งกังหันลม.html'>
+              <button>Read More</button>
+              </a>
+            </div>
+          </li>
+    
+          <li class='item' style="background-image: url('https://scontent.fbkk5-3.fna.fbcdn.net/v/t1.6435-9/62105026_1270357286465349_8228777556652851200_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFV4cy52pdqSc2vZpabqrW4Uec2EdnXtQFR5zYR2de1AcSuxWky7RvqrFCOSNuUifoz5hcK0wzD9uMilqSz0EoA&_nc_ohc=mzsqZaqh2f0AX8jhYxb&_nc_ht=scontent.fbkk5-3.fna&oh=00_AfDkcRE5VL_qePmLDLqWvvMlk0Mf3nfLW3HCYiaekx9vMg&oe=662E4417')">
+            <div class='content'>
+              <h2 class='title'>"The blue sky garden"</h2>
+              <p class='description'> สวนฟ้าสีคราม เสน่ห์ของธรรมชาติที่งดงามและสะท้อนความงามของท้องฟ้า
+                ที่นี่เป็นที่สำคัญสำหรับการพักผ่อนและค้นพบความสงบสุขในใจ
+                เป็นสถานที่ที่คุณสามารถหลุดพ้นจากความวุ่นวายของชีวิตได้  </p>
+              <a href='/bluesky.html'>
+              <button>Read More</button>
+              </a>
+            </div>
+          </li>
+    
+          
+          <li class='item' style="background-image: url('https://v4i.rweb-images.com/www.khaokho.com/images/editor/Dinosaur001.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Amazing Dinosaur"</h2>
+              <p class='description'> Amazing Dinosaur ที่สะท้อนความล้ำหน้าของชั่วคราวในประวัติศาสตร์ของโลก
+                ด้วยความประทับใจและความสนุกสนาน ที่นี่เป็นสถานที่ที่เด็กๆและคนใหญ่ต่างสามารถตื่นตาตื่นใจได้
+                เป็นที่น่าสนใจและท้าทายสำหรับผู้สนใจทุกคนที่หลงใหลในโลกของไดโนเสาร์  </p>
+              <a href='/Amazing Dino.html'>
+              <button>Read More</button>
+              </a>
+            </div>
+          </li>
+          
+          
+          <li class='item' style="background-image: url('https://img.wongnai.com/p/1920x0/2019/07/13/a820226ce7334ce3a3707936c43d9f5c.jpg')">
+            <div class='content'>
+              <h2 class='title'>"The Pino latte"</h2>
+              <p class='description'> 
+                ปีนโลกแห่งการสร้างประสบการณ์ความอบอุ่นที่น่าหลงใหล ท่ามกลางอากาศดีๆ ของเขาค้อ 
+                กับกาแฟพิเศษที่ทำให้คุณหลงใหลในความหอมหวาน และรสชาติที่เป็นเอกลักษณ์ที่คุณจะต้องรู้สึกถึงตลอดวัน!  </p>
+              <a href='/The pino latte.html'></a>
+              <button>Read More</button>
+            </div>
+          </li>
+    
+        </ul>
+        <nav class='nav'>
+          <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+          <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>    
+      </main>
+      <footer>
+        <div class="footer-con">
+            <div class="item1">
+                <div class="right">
+                    <img src="https://www2.m-culture.go.th/phetchabun/images/Bland_pbn.gif" alt="" style="height: 50px;">
+                    <h3 class="province">Phetchabun</h3></div>
+                <div class="left">
+                    <ul class="ul-style">
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook-messenger"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item2">
+                <div class="item2-1">
+                    <ul class="footer-r">
+                        <li><a href="#">Advertise With Us</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Contributor Handbook</a></li>
+                    </ul>
+                </div>
+                <div class="item2-1">
+                    <ul class="footer-r">
+                        <li><a href="#">Advertise With Us</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Contributor Handbook</a></li>
+                    </ul>
+                </div>
+                <div class="item2-1">
+                    <ul class="footer-r">
+                        <li><a href="#">Advertise With Us</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Contributor Handbook</a></li>
+                    </ul>
+                </div>
+                <div class="item2-1">
+                    <ul class="footer-r">
+                        <li><a href="#">Advertise With Us</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Contributor Handbook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item3">
+                <div class="item3-con">
+                    <p>© Web design. All rights reserved. </p>
+                    <a href="#">Back to top</a>
+                </div>
+            </div>
+        </div>
+      </footer>
 
-	</ul>
-	<nav class='nav'>
-	  <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
-	  <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
-	</nav>
 
-  </main>
 
-	<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
 		const slider = document.querySelector('.slider');
 
 		function activate(e) {
@@ -307,10 +470,5 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	
 </body>
-<footer>
-<section class="contact">
-	<h2> CONTACT US</h2>
-	<p>1400 John F. Kennedy Blvd.
-	  Philadelphia, PA 19107 <br>©1998-2024 Visit Philadelphia® All Rights Reserved.</p>
-  </section>
+
 </html>
