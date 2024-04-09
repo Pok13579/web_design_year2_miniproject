@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blog/News</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="stylecontact.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            color: #f2f5f7;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+            font-weight: 300;
+    }
+    h3,p{
+      color: black;
+    }
+    body, html {
+      height: 100%;
+      font-family:  sans-serif;
+    }
+    img{
+      max-width: 100%;
+      height: 272.22px;
+    }
+    </style>
+  </head>
+<body>
+	
+	<header>
+		<nav class="navbar">
+		  <div class="container">
+			<a href="#" class="logo">Phetchabun</a>
+			<ul class="nav-links">
+				<li class="dropdown">
+					<a href="#" class="dropbtn">Destination</a>
+					<div class="dropdown-content">
+                        <a href="/Si Thep.html">อุทยานประวัติศาสตร์ศรีเทพ</a>
+                        <a href="/khaokor.html">เขาค้อ</a>
+                        <a href="/ThungKangHuaLom.html">ทุ่งกังหันลม</a>
+                        <a href="/PhuTabBerg.html">ภูทับเบิก</a>
+                        <a href="/bluesky.html">The blue sky garden</a>
+                        <a href="/The Piney Bistro Cafe.html">The Piney Bistro Cafe</a>
+                        <a href="/Amazing Dino.html">Amazing Dinosaur</a>
+                        <a href="/The pino latte.html">The pino latte</a>
+  
+
+					</div>
+				  </li>				  
+			  <li><a href="#">Contact</a></li>
+        <li><a href="/index.html">Home</a></li>
+			</ul>
+		  </div>
+		</nav>
+	</header>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="wrapper">
+                        <div class="row no-gutters mb-5">
+                            <!-- Contact form -->
+                            <div class="col-md-7">
+                                <div class="contact-wrap w-100 p-md-5 p-4">
+                                    <h3 class="mb-4">Contact Us</h3>
+                                    <!-- Form and inputs -->
+                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label" for="name">Full Name</label>
+                                                    <input type="text" class="form-control" name="name" id="name"
+                                                        placeholder="Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label" for="email">Email Address</label>
+                                                    <input type="email" class="form-control" name="email" id="email"
+                                                        placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="Topic to inquire">Topic to inquire</label>
+                                                    <input type="text" class="form-control" name="Topic to inquire"
+                                                        id="Topic to inquire" placeholder="Topic to inquire">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="#">Message</label>
+                                                    <textarea name="message" class="form-control" id="message" cols="30"
+                                                        rows="4" placeholder="Message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="Send Message" class="btn btn-primary">
+                                                    <div class="submitting"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Map -->
+                            <div class="col-md-5 d-flex align-items-stretch">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2789.2019935082812!2d99.89758990130242!3d8.641295777728292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3053a1796fcd307f%3A0x7aadb40e612ebad!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Lin4Lil4Lix4Lii4Lil4Lix4LiB4Lip4LiT4LmM!5e0!3m2!1sth!2sth!4v1711519087351!5m2!1sth!2sth"
+                                    class="border-0 rounded w-100 h-100" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <!-- Contact info -->
+                        <div class="row">
+                            <!-- Contact info item 1 -->
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-map-marker"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Address:</span> walailak university</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Contact info item 2 -->
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-phone"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Contact info item 3 -->
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-paper-plane"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Contact info item 4 -->
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-globe"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Your custom script here -->
+
+
+<!-- Footer -->
+<footer class="gray">
+  <div class="footer-con">
+      <div class="item1">
+          <div class="right">
+              <img src="https://www2.m-culture.go.th/phetchabun/images/Bland_pbn.gif" alt="" style="height: 50px;">
+              <h3 class="province" style="color: #f2f5f7;">Phetchabun</h3></div>
+          <div class="left">
+              <ul class="ul-style">
+                  <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-facebook-messenger"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="item2">
+          <div class="item2-1">
+              <ul class="footer-r">
+                  <li><a href="#">Advertise With Us</a></li>
+                  <li><a href="#">Contribute</a></li>
+                  <li><a href="#">Contributor Handbook</a></li>
+              </ul>
+          </div>
+          <div class="item2-1">
+              <ul class="footer-r">
+                  <li><a href="#">Advertise With Us</a></li>
+                  <li><a href="#">Contribute</a></li>
+                  <li><a href="#">Contributor Handbook</a></li>
+              </ul>
+          </div>
+          <div class="item2-1">
+              <ul class="footer-r">
+                  <li><a href="#">Advertise With Us</a></li>
+                  <li><a href="#">Contribute</a></li>
+                  <li><a href="#">Contributor Handbook</a></li>
+              </ul>
+          </div>
+          <div class="item2-1">
+              <ul class="footer-r">
+                  <li><a href="#">Advertise With Us</a></li>
+                  <li><a href="#">Contribute</a></li>
+                  <li><a href="#">Contributor Handbook</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="item3">
+          <div class="item3-con">
+              <p>© Web design. All rights reserved. </p>
+              <a href="#">Back to top</a>
+          </div>
+      </div>
+  </div>
+</footer>
+
+</body>
+</html>
